@@ -1,0 +1,36 @@
+# build Docker image
+docker build -t server:1.0 .
+
+# print local images
+docker images
+
+# run application
+docker run -p 4000:80 server:1.0
+
+# run application in deatached mode
+docker run -d -p 4000:80 server:1.0
+
+# list working containers
+docker container ls
+
+# stop specified container
+docker container stop CONTAINER ID
+
+# Name generator for Docker default container names 
+https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go
+
+sudo docker run -d --name redis --network local1 redis
+sudo docker run -d -p 4000:80 --network local1 server:1.0
+
+
+docker push repo/name:version
+docker build <path> repo/name:version
+
+sudo docker ps
+sudo docker logs 511ddcfae8e3
+sudo docker logs -f 511ddcfae8e3
+
+sudo docker stats 511ddcfae8e3
+sudo docker exec ...
+sudo docker exec -i b8b1ed1a1c0c cat -
+
